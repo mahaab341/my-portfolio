@@ -1,48 +1,48 @@
-.hero-section {
-  background:
-    radial-gradient(circle at 20% 20%, rgba(20, 184, 166, 0.08), transparent 40%),
-    var(--bg-primary);
-  color: var(--text-primary);
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+/* Layout/positioning (position-absolute, d-flex, rounded-circle, etc.) is
+   handled by Bootstrap utility classes in the JSX. Only what Bootstrap has
+   no utility for stays here: the grid background-image, mask fade, blur,
+   glow colors/sizes, and the section's min-height. */
+
+.hero-bg-wrapper {
+  min-height: 85vh;
+  background-color: var(--bg-primary);
 }
 
-.hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
+.hero-grid {
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 55%, transparent 95%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 55%, transparent 95%);
 }
 
-.highlight {
-  color: var(--accent);
+.hero-glow {
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(90px);
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  margin-bottom: 30px;
+.glow-1 {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  left: -100px;
+  background: rgba(20, 184, 166, 0.28);
 }
 
-.btn-primary {
-  display: inline-block;
-  background-color: var(--accent);
-  color: #05201c;
-  padding: 12px 30px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: var(--accent-dark);
+.glow-2 {
+  width: 380px;
+  height: 380px;
+  bottom: -140px;
+  right: -100px;
+  background: rgba(20, 184, 166, 0.16);
 }
 
 @media (max-width: 600px) {
-  .hero-content h1 {
-    font-size: 2rem;
+  .hero-bg-wrapper h1 {
+    font-size: 2.2rem !important;
   }
 }

@@ -1,31 +1,150 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
-  --bg-primary: #000000;       /* Pure Black */
-  --bg-surface: #0a0a0a;       /* Slightly lighter black */
-  --bg-surface-alt: #111111;   /* Cards background */
-  --border-subtle: #222222;
-  --text-primary: #ffffff;     /* White text */
-  --text-secondary: #909090;   /* Grey text */
-  --accent: #2563EB;           /* Professional Royal Blue */
-  --accent-dark: #1D4ED8;
+  --bg-primary: #0D1117;       /* Midnight Slate (Pure black nahi, soft dark) */
+  --bg-surface: #161B22;       /* Card Background */
+  --bg-surface-alt: #21262D;   /* Alt Background */
+  --border-subtle: #30363D;    /* Subtle Borders */
+  --text-primary: #E6EDF3;     /* Crisp White */
+  --text-secondary: #8B949E;   /* Muted Grey */
+  --accent: #6366F1;           /* Vibrant Indigo (Premium Purple-Blue) */
+  --accent-dark: #4F46E5;
+  --accent-glow: rgba(99, 102, 241, 0.4); /* Glow effect ke liye */
 }
 
 * { box-sizing: border-box; scroll-behavior: smooth; }
 body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Inter', 'Segoe UI', sans-serif; line-height: 1.6; }
 
 .section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
-h2 { font-size: 2.2rem; margin-bottom: 40px; color: var(--text-primary); border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 5px; }
+h2 { font-size: 2.2rem; margin-bottom: 40px; color: var(--text-primary); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 8px; }
 
 /* Navbar */
-.navbar-custom { background-color: rgba(0, 0, 0, 0.9) !important; border-bottom: 1px solid var(--border-subtle); }
+.navbar-custom { background-color: rgba(13, 17, 23, 0.8) !important; backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-subtle); }
 .navbar-custom .navbar-brand { color: var(--accent); font-weight: bold; cursor: pointer; }
-.navbar-custom .nav-link { color: var(--text-primary) !important; cursor: pointer; transition: color 0.3s; margin: 0 10px; }
-.navbar-custom .nav-link:hover { color: var(--accent) !important; }
 
-/* Buttons */
-.btn-custom-primary { background-color: var(--accent); color: #fff; border: none; font-weight: 600; padding: 10px 25px; transition: all 0.3s ease; }
-.btn-custom-primary:hover { background-color: var(--accent-dark); color: #fff; transform: translateY(-2px); }
+.navbar-custom .nav-link {
+  position: relative;
+  color: var(--text-secondary) !important;
+  cursor: pointer;
+  transition: color 0.3s;
+  margin: 0 10px;
+  font-weight: 500;
+  padding-bottom: 6px !important;
+}
 
-.btn-outline-custom { border: 2px solid var(--accent); color: var(--text-primary); margin: 5px; min-width: 280px; padding: 10px; transition: all 0.3s ease; background: transparent; }
-.btn-outline-custom:hover { background-color: var(--accent); color: #fff; border-color: var(--accent); }
+/* Highlighted line under each tab - grows in on hover, from center outward */
+.navbar-custom .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent-glow);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover { color: var(--text-primary) !important; }
+.navbar-custom .nav-link:hover::after { left: 0; width: 100%; }
+
+/* Active tab keeps the line visible without hovering */
+.navbar-custom .nav-link.active {
+  color: var(--text-primary) !important;
+}
+.navbar-custom .nav-link.active::after {
+  left: 0;
+  width: 100%;
+}
+
+/* Primary Button */
+.btn-custom-primary { background-color: var(--accent); color: #fff; border: none; font-weight: 600; padding: 12px 30px; transition: all 0.3s ease; box-shadow: 0 4px 15px var(--accent-glow); }
+.btn-custom-primary:hover { background-color: var(--accent-dark); color: #fff; transform: translateY(-3px); box-shadow: 0 6px 20px var(--accent-glow); }
+
+/* Contact List / Outline Buttons */
+.btn-outline-custom { 
+  background-color: var(--bg-surface); 
+  border: 1px solid var(--border-subtle); 
+  color: var(--text-primary); 
+  margin: 5px; 
+  min-width: 300px; 
+  padding: 15px 20px; 
+  transition: all 0.3s ease; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px; 
+  font-weight: 500;
+}
+.btn-outline-custom:hover { 
+  background-color: var(--bg-surface-alt); 
+  color: var(--accent); 
+  border-color: var(--accent); 
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+/* =========================================
+   Hero Section: Animated Background & Grid
+   ========================================= */
+.hero-bg-wrapper {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  isolation: isolate; /* Elements ko isolate karne ke liye */
+}
+
+/* Animated Glowing Orbs */
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent);
+  opacity: 0.15;
+  top: -100px;
+  left: -100px;
+}
+
+.glow-2 {
+  width: 300px;
+  height: 300px;
+  background: #8B5CF6; /* Halka sa purple glow */
+  opacity: 0.15;
+  bottom: -50px;
+  right: -50px;
+  animation-delay: 2s;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(30px); }
+}
+
+/* Tech Grid Overlay */
+.hero-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+  opacity: 0.4;
+  z-index: -1;
+}

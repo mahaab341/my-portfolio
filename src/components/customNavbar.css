@@ -1,0 +1,9 @@
+/* Solid, always-visible background so the navbar never blends into the
+   black hero section, no matter which page or scroll position you're on. */
+.navbar-custom {
+  background-color: rgba(13, 13, 13, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-subtle);
+  z-index: 1030;
+}

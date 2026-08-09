@@ -3,8 +3,9 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 
 const skillCategories = [
-  { title: 'Languages', items: ['HTML5', 'CSS3', 'JavaScript (ES6+)'] },
-  { title: 'Frameworks & Libraries', items: ['React.js', 'Bootstrap', 'Tailwind CSS'] },
+  { title: 'Languages', items: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'PHP'] },
+  { title: 'Frameworks & Libraries', items: ['React.js', 'Bootstrap', 'Laravel'] },
+  { title: 'Database', items: ['MySQL'] },
   { title: 'Tools', items: ['Git & GitHub', 'VS Code', 'Figma'] },
 ];
 
@@ -17,9 +18,15 @@ const Skills = () => {
         </motion.h2>
         <Row className="g-4 justify-content-center">
           {skillCategories.map((category, index) => (
-            <Col md={4} key={index}>
-              <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.2 }}>
-                <Card style={{ backgroundColor: 'var(--bg-surface-alt)', border: '1px solid var(--border-subtle)' }}>
+            <Col md={6} lg={3} key={index}> {/* lg={3} kiya taa-ke 4 cards ek line me aayen */}
+              <motion.div 
+                initial={{ opacity: 0, y: 40 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ delay: index * 0.2 }}
+                className="h-100"
+              >
+                <Card className="h-100" style={{ backgroundColor: 'var(--bg-surface-alt)', border: '1px solid var(--border-subtle)' }}>
                   <Card.Body>
                     <Card.Title style={{ color: 'var(--accent)' }}>{category.title}</Card.Title>
                     <ul style={{ listStyle: 'none', padding: 0, color: 'var(--text-secondary)' }}>
