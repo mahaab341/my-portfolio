@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { scrollToSection } from '../utils/scrollToSection';
-import './CustomNavbar.css';
+import './customNavbar.css';
 
 const navItems = [
   { label: 'Home', id: 'home' },
