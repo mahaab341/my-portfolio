@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { scrollToSection } from '../utils/scrollToSection';
-import './Hero.css';
+import './hero.css';
 
 const Hero = () => {
   return (
