@@ -1,0 +1,29 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --bg-primary: #000000;
+  --bg-surface: #121212;
+  --bg-surface-alt: #1c1c1c;
+  --border-subtle: #2a2a2a;
+  --text-primary: #f2f2f2;
+  --text-secondary: #a3a3a3;
+  --accent: #14b8a6;
+  --accent-dark: #0d9488;
+}
+
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body { background-color: var(--bg-primary); color: var(--text-primary); font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+
+.section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+h2 { font-size: 2.2rem; margin-bottom: 40px; color: var(--text-primary); border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 5px; }
+
+.navbar-custom { background-color: rgba(0, 0, 0, 0.9) !important; border-bottom: 1px solid var(--border-subtle); }
+.navbar-custom .navbar-brand { color: var(--accent); font-weight: bold; cursor: pointer; }
+.navbar-custom .nav-link { color: var(--text-primary) !important; cursor: pointer; transition: color 0.3s; margin: 0 10px; }
+.navbar-custom .nav-link:hover { color: var(--accent) !important; }
+
+.btn-custom-primary { background-color: var(--accent); color: #000; border: none; font-weight: 600; padding: 10px 25px; transition: all 0.3s ease; }
+.btn-custom-primary:hover { background-color: var(--accent-dark); color: #fff; }
+
+.btn-outline-custom { border: 2px solid var(--accent); color: var(--text-primary); margin: 5px; min-width: 280px; padding: 10px; transition: all 0.3s ease; }
+.btn-outline-custom:hover { background-color: var(--accent); color: #000; }
