@@ -1,16 +1,70 @@
-# React + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, responsive personal portfolio website built with **React.js**, **React-Bootstrap**, and **Framer Motion**, showcasing my skills, projects, and contact information.
+This project was developed as part of my **Frontend Development Internship** at [CodeAlpha](https://www.codealpha.tech).
+## ✨ Features
 
-Currently, two official plugins are available:
+- 📱 Fully responsive design (mobile, tablet, desktop)
+- 👤 **About** section with personal introduction
+- 🛠 **Skills** section highlighting technical expertise
+- 💼 **Projects** section showcasing key work with detailed case studies
+- 📩 **Contact** section for reaching out
+- 🎨 Clean UI built with React-Bootstrap components
+- ⚡ Smooth scrolling and Framer Motion animations
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- **React.js** – Frontend library for building the UI
+- **Vite** – Fast build tool and dev server
+- **React-Bootstrap** – Styling and responsive components
+- **Framer Motion** – Animations and transitions
+- **HTML5 & CSS3** – Markup and custom styling
+- **JavaScript (ES6+)** – Interactivity and logic
+- **Git & GitHub** – Version control
+- **Vercel** – Deployment
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
 
-## Expanding the Oxlint configuration
+```
+CodeAlpha_Portfolio/
+├── public/
+├── src/
+│   ├── components/
+│   ├── assets/
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
+├── vite.config.js
+├── package.json
+└── README.md
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Getting Started (Run Locally)
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/mahaab341/CodeAlpha_Portfolio.git
+   ```
+2. Navigate to the project folder
+   ```bash
+   cd CodeAlpha_Portfolio
+   ```
+3. Install dependencies
+   ```bash
+   npm install
+   ```
+4. Start the development server
+   ```bash
+   npm run dev
+   ```
+5. Open the local URL shown in the terminal (usually [http://localhost:5173](http://localhost:5173))
+
+## 👩‍💻 About Me
+
+Hi, I'm **Maha** — a BS Computer Science graduate and aspiring Full Stack Developer, currently interning as a **Frontend Developer** at CodeAlpha. I specialize in **React.js, React-Bootstrap, MySQL, PHP, and Laravel**.
+
+## 📬 Contact
+
+- LinkedIn: [https://www.linkedin.com/in/maha-abdulrehman/]
+- Email: [mahaab341@gmail.com]
+- GitHub: [@mahaab341](https://github.com/mahaab341)
