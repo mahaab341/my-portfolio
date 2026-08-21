@@ -1,0 +1,32 @@
+/* ===========================
+   About Section
+   =========================== */
+
+.about-section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-text {
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.about-highlight {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.about-accent {
+  color: var(--accent);
+}

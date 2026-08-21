@@ -21,16 +21,32 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 style={{ fontSize: '3.5rem', marginBottom: '15px', fontWeight: 800 }}>
-            Hi, I'm <span style={{ color: 'var(--accent)' }}>Maha AbdulRehman</span>
+          <h1 className="hero-title">
+            Hi, I'm <span className="hero-name">Maha AbdulRehman</span>
           </h1>
-          {/* Yahan Update Kiya Hai */}
-          <p style={{ fontSize: '1.3rem', color: 'var(--text-secondary)', marginBottom: '30px' }}>
-            Full Stack Developer | React & Laravel Enthusiast
+
+          <p className="hero-subtitle">
+            Full Stack Developer | React &amp; Laravel Enthusiast
           </p>
-          <Button className="btn-custom-primary" onClick={() => scrollToSection('projects')}>
-            View My Work
-          </Button>
+
+          {/* Buttons Row */}
+          <div className="hero-btn-group">
+            <Button
+              className="btn-custom-primary"
+              onClick={() => scrollToSection('projects')}
+            >
+              View My Work
+            </Button>
+
+            <a
+              href="/Maha_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-resume"
+            >
+              Download Resume
+            </a>
+          </div>
         </motion.div>
       </Container>
     </section>

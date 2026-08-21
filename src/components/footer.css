@@ -1,0 +1,21 @@
+/* ===========================
+   Footer Section
+   =========================== */
+
+.site-footer {
+  background-color: #000;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 25px 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.footer-text {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-accent {
+  color: var(--accent);
+  font-weight: 600;
+}

@@ -46,3 +46,66 @@
     font-size: 2.2rem !important;
   }
 }
+/* ===========================
+   Hero Text & Buttons
+   =========================== */
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.hero-name {
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 35px;
+}
+
+/* Button Group */
+.hero-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Resume / Outline Button */
+.btn-resume {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  color: var(--accent);
+  background: transparent;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-resume:hover {
+  background-color: var(--accent);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--accent-glow);
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-btn-group {
+    flex-direction: column;
+  }
+  .btn-resume {
+    width: 100%;
+    text-align: center;
+  }
+}
